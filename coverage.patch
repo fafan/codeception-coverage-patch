@@ -1,0 +1,11 @@
+--- vendor/codeception/codeception/src/Codeception/Coverage/Subscriber/LocalServer.php	2016-10-26 17:00:34.000000000 +0700
++++ vendor/codeception/codeception/src/Codeception/Coverage/Subscriber/LocalServer.php	2016-11-12 03:04:57.000000000 +0700
+@@ -154,7 +154,7 @@
+             'CodeCoverage_Config' => $this->settings['remote_config']
+         ];
+         $this->module->amOnPage('/');
+-        $this->module->setCookie(self::COVERAGE_COOKIE, json_encode($cookie));
++        setcookie(self::COVERAGE_COOKIE, json_encode($cookie));
+     }
+
+     protected function fetchErrors()
